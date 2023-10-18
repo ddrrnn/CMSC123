@@ -4,30 +4,23 @@ class DLLNode:
         self.nextNode = nextNode
         self.prevNode = prevNode
 
-
     def setValue(self, value):
         self.value = value
-
 
     def getValue(self):
         return self.value
 
-
     def setNext(self, nextNode):
         self.nextNode = nextNode
-
 
     def getNext(self):
         return self.nextNode
 
-
     def setPrev(self, prevNode):
         self.prevNode = prevNode
 
-
     def getPrev(self):
         return self.prevNode
-
 
 class DLL:
     # Insert the 'DLL' class you created in Lab1, since they should be the same
@@ -38,23 +31,18 @@ class DLL:
         self.tailNode.setNext(None)
         self.headNode.setPrev(None)
 
-
     def getSize(self):
         # returns the size of the queue
         # REQUIRED
         return self.size
-
 
     def isEmpty(self):
         # The isEmpty() operation returns true if the queue is empty and false if the queue is not empty
         # REQUIRED
         return self.size == 0
 
-
 class DLLDeque(DLL):
     # Note that class "DLLQueue" inherits the class "DLL" attributes and methods
-
-
     def first(self):
         # The first() operation returns a reference value to the first element of the deque, but doesn’t remove it
         # REQUIRED
@@ -63,9 +51,6 @@ class DLLDeque(DLL):
         else:
             return self.headNode
 
-
-
-
     def last(self):
         # The last() operation returns a reference value to the last element of the deque, but doesn’t remove it
         # REQUIRED
@@ -73,7 +58,6 @@ class DLLDeque(DLL):
             return DLLNode(None)
         else:
             return self.tailNode
-
 
     def insertFirst(self, value):
         # The insertFirst() operation inserts an element at the front of the deque
@@ -85,9 +69,6 @@ class DLLDeque(DLL):
         self.headNode = new_node
         self.size += 1
 
-
-
-
     def insertLast(self, value):
         # The insertLast() operation inserts an element at the end of the deque
         # REQUIRED
@@ -97,7 +78,6 @@ class DLLDeque(DLL):
         new_node.setNext(None)
         self.tailNode = new_node
         self.size += 1
-
 
     def removeFirst(self):
         # The removeFirst() operation removes the element at the front of the deque
@@ -110,7 +90,6 @@ class DLLDeque(DLL):
         removed.setNext(None)
         self.size -= 1
         return removed
-
 
     def removeLast(self):
         # The removeLast() operation removes the element at the end of the deque

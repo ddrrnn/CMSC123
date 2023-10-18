@@ -4,18 +4,14 @@ class Element:
         self.value = value
         self.index = index
 
-
     def setValue(self,value):
         self.value = value
-
 
     def getValue(self):
         return self.value
 
-
     def getIndex(self):
         return self.index
-
 
 class Array:
     def __init__(self, capacity=10):
@@ -32,26 +28,20 @@ class Array:
         # REQUIRED
         return self.size
 
-
-
-
     def getCapacity(self):
         # returns the capacity of the queue
         # REQUIRED
         return self.capacity
-
 
     def isEmpty(self):
         # The isEmpty() operation returns true if the queue is empty and false if the queue is not empty
         # REQUIRED
         return self.size == 0
 
-
     def expand(self):
         # The expand() operation increases the capacity when necessary
         self.capacity += self.DEFAULT_EXPANSION
         self.contents += ([None]*self.DEFAULT_EXPANSION)
-
 
     def wrapAround(self):
         # The wrapAround() operation resets the Array back where head is at index 0
@@ -64,12 +54,8 @@ class Array:
         self.frontIndex = 0
         self.rearIndex = self.size
 
-
-
-
 class CircularQueue(Array):
     # Note that class "CircularQueue" inherits the class "Array" attributes and methods
-
 
     def front(self):
         # The front() operation returns a reference value to the front element of the queue, but doesn’t remove it
@@ -78,9 +64,6 @@ class CircularQueue(Array):
             return Element(None)
         else:
             return self.contents[self.frontIndex]
-
-
-
 
     def enqueue(self, value):
         # The enqueue() operation inserts an element at the end of the queue
@@ -95,9 +78,6 @@ class CircularQueue(Array):
             self.contents[self.rearIndex] = new_elem
             self.rearIndex = (self.rearIndex + 1) % self.capacity
             self.size += 1
-
-
-
 
     def dequeue(self):
         # The dequeue() operation removes the element at the front of the queue
